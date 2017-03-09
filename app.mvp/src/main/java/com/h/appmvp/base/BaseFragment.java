@@ -162,7 +162,15 @@ public abstract class BaseFragment extends SupportFragment
         return getContext();
     }
 
+
+
     private final BehaviorSubject<FragmentEvent> lifecycleSubject = BehaviorSubject.create();
+
+    @Override
+    public <T> LifecycleTransformer<T> bindToLife() {
+        return this.<T>bindToLifecycle();
+    }
+
 
     @Override
     @NonNull
